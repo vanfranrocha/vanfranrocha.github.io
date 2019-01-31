@@ -32,8 +32,17 @@ span{
   font-weight: 300;
   text-decoration: none;
 }
+.menu li.active a{
+  color: #753885;
+  font-weight: 600;
+}
 .menu li a{
   padding-right: 10px;
+}
+.menu li a:hover{
+  color: #753885;
+  font-weight: 600;
+  transition: 0.4s;
 }
 .container{
 	max-width: 1440px;
