@@ -111,7 +111,6 @@ span {
   /* Responsive image */
   /* clearfix mansory */
 }
-
 .grid-item img {
   display: block;
   max-width: 100%;
@@ -140,6 +139,7 @@ span {
 }
 
 @media (min-width: 768px) {
+
   .text-about h1::before {
     font-size: 85px;
   }
