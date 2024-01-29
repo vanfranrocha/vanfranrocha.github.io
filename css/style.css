@@ -96,7 +96,7 @@ span {
   background: #3d174b;
 }---- */
 .text-about p {
-  font-size: 22px;
+  font-size: 20px;
   color: #7c7c7c;
   font-weight: 300;
 }
@@ -111,11 +111,19 @@ span {
   /* Responsive image */
   /* clearfix mansory */
 }
+.grid-item a {
+  overflow: hidden;
+  display: block;
+}
 .grid-item img {
+  transition: all 0.3s ease-in-out;
   display: block;
   max-width: 100%;
   margin: 0;
   object-fit: cover;
+}
+.grid-item img:hover {
+  transform: scale(1.07);
 }
 
 .grid-item:after {
