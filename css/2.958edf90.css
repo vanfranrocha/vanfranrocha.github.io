@@ -1,0 +1,1 @@
+.fixed-sticky{position:sticky;top:0}.titulo{font-size:32px;font-weight:600;color:#fff;line-height:1}.box-numero{height:42px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:22px}@media (max-width:1000px){.titulo{font-size:18px}.box-numero{height:34px}}
