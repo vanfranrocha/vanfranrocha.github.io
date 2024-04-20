@@ -1,0 +1,168 @@
+span {
+  font-weight: 600;
+}
+
+.site-app {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.siteheader {
+  position: relative;
+}
+
+.logoimg {
+  margin-top: 2%;
+  text-align: right;
+}
+
+.mt-3 {
+  padding-top: 3%;
+}
+
+.mt-30 {
+  padding-top: 30vh;
+}
+
+.fixed-menu {
+  position: fixed;
+  width: 20%;
+}
+
+.menu li {
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.menu li a {
+  color: #7c7c7c;
+  font-size: 24px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.menu li.active a {
+  color: #753885;
+  font-weight: 600;
+}
+
+.menu li a {
+  padding-right: 10px;
+}
+
+.menu li a:hover {
+  color: #753885;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.text-about h1 {
+  font-size: 52px;
+  color: #753885;
+  font-weight: 300;
+  letter-spacing: -2px;
+}
+
+.text-about h1::before {
+  content: 'Sobre mim';
+  font-size: 100px;
+  color: #f3f3f3;
+  margin-top: -9%;
+  position: absolute;
+  font-weight: 700;
+  text-align: right;
+  width: 100%;
+  z-index: 0;
+}
+
+.text-about h1 span {
+  font-weight: 700;
+  position: relative;
+}
+
+/* ----.text-about h1 span::before{
+  width: 100%;
+  content: '';
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  background: #3d174b;
+}---- */
+.text-about p {
+  font-size: 20px;
+  color: #7c7c7c;
+  font-weight: 300;
+}
+
+.portfolio {
+  padding-right: 0 !important;
+}
+
+/* ---- .grid-item ---- */
+.grid-item {
+  float: left;
+  /* Responsive image */
+  /* clearfix mansory */
+}
+.grid-item a {
+  overflow: hidden;
+  display: block;
+}
+.grid-item img {
+  transition: all 0.3s ease-in-out;
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+.grid-item img:hover {
+  transform: scale(1.07);
+}
+
+.grid-item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+  box-sizing: border-box;
+}
+
+@media (min-width: 320px) {
+
+  .grid-sizer,
+  .grid-item {
+    width: 49%;
+    padding: 0.5%;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .text-about h1::before {
+    font-size: 85px;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 33%;
+    padding: 0.1665%;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
