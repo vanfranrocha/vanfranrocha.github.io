@@ -1,20 +1,67 @@
 span {
   font-weight: 600;
 }
-
+body{
+  font-family: "DM Sans", serif;
+}
 .site-app {
   width: 100%;
-  height: 100%;
   min-height: 500px;
+  background: #180A0A;
+  position: relative;
+  cursor: cell;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-image: url('../Images/background.png');
+  }
+}
+svg {
+  width: 1300px;
+  height: 1500px;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+path {
+  stroke: #291024;
+  stroke-opacity: 0.7;
+  stroke-width: 2;
+  /* fill: none; */
+  stroke-dasharray: 500; /* Define o comprimento total do path */
+  stroke-dashoffset: 500; /* Esconde o path inicialmente */
+  animation: drawPath 3s ease-in-out infinite alternate;
+}
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0; /* Revela o path */
+  }
 }
 
+@keyframes movePath {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
+}
 .siteheader {
   position: relative;
 }
 
 .logoimg {
   margin-top: 2%;
-  text-align: right;
+}
+.logoimg img{
+  width: 50px;
 }
 
 .mt-3 {
@@ -24,67 +71,149 @@ span {
 .mt-30 {
   padding-top: 30vh;
 }
-
+.header{
+  padding: 36px 0;
+  width: 100%;
+  z-index: 2;
+}
 .fixed-menu {
   position: fixed;
-  width: 20%;
 }
-
+.menu{
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: space-between;
+}
 .menu li {
   display: block;
-  margin-top: 20px;
+  /* margin-top: 16px; */
   text-align: right;
 }
 
 .menu li a {
-  color: #7c7c7c;
-  font-size: 24px;
+  color: #d0d0d0;
+  letter-spacing: 0.8;
+  font-size: 16px;
   font-weight: 300;
   text-decoration: none;
 }
+.menu li a i{
+  font-size: 22px;
+}
 
 .menu li.active a {
-  color: #753885;
+  color: #F10086;
   font-weight: 600;
 }
 
 .menu li a {
   padding-right: 10px;
 }
+.menu li a i {
+  transition: .2s all;
+}
 
 .menu li a:hover {
-  color: #753885;
+  color: #F10086;
   font-weight: 600;
   transition: 0.4s;
 }
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
+.menu li a:hover i {
+  transform: scale(1.2);
 }
-
-.text-about h1 {
-  font-size: 52px;
-  color: #753885;
-  font-weight: 300;
-  letter-spacing: -2px;
-}
-
-.text-about h1::before {
-  content: 'Sobre mim';
-  font-size: 100px;
-  color: #f3f3f3;
-  margin-top: -9%;
-  position: absolute;
-  font-weight: 700;
-  text-align: right;
+.button-primary{
+  border-radius: 32px;
+  background: #F10086;
+  padding: 12px 8px;
   width: 100%;
-  z-index: 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 1px 12px 2px rgba(241, 0, 134, 0.20);
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.35s;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+.button-primary:hover{
+  text-decoration: none;
+  color: white;
+}
+.button-primary:hover:before {
+    transform: translate(-45%, -34%) translateZ(0);
+}
+.button-primary:before {
+  content: "";
+  display: block;
+  background: #b40164;
+  position: absolute;
+  width: 200%;
+  transform: translate(-110%, -110%) translateZ(0);
+  height: 500%;
+  border-radius: 100%;
+  transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
+.button-primary div, .button-primary-outline div{
+  position: relative;
+}
+.button-primary-outline{
+  border-radius: 32px;
+  width: 100%;
+  text-align: center;
+  padding: 12px 8px;
+  color: white;
+  border: 1px solid #F10086;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+.button-primary-outline:before {
+  content: "";
+  display: block;
+  background: #fff;
+  position: absolute;
+  width: 200%;
+  transform: translate(-110%, -110%) translateZ(0);
+  height: 500%;
+  border-radius: 100%;
+  transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
+.button-primary-outline:hover:before {
+  transform: translate(-45%, -34%) translateZ(0);
+}
+.button-primary-outline:hover{
+  text-decoration: none;
+  color: #F10086;
 }
 
-.text-about h1 span {
-  font-weight: 700;
+.banner{
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+}
+.text-about{
+  text-align: center;
+}
+.text-about h1 {
+  background: linear-gradient(90deg, #FFF 37%, #F10086 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 300;
+  text-align: center;
+}
+
+.text-about h1 b {
+  font-weight: 700;
 }
 
 /* ----.text-about h1 span::before{
@@ -96,9 +225,114 @@ span {
   background: #3d174b;
 }---- */
 .text-about p {
-  font-size: 20px;
-  color: #7c7c7c;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 400;
+}
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #F10086;
+  width: 0;
+  animation: typing 5s steps(30, end) infinite, blink 0.6s step-end infinite;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 26ch;
+  }
+  80% {
+    width: 26ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #F10086;
+  }
+}
+
+.linha-divisoria {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+  height: 1px;
+  width: 100%;
+}
+.sobre-mim{
+  position: relative;
+  padding-bottom: 80px;
+}
+.sobre-mim::before{
+  content: '';
+  background-image: url('../Images/foto-sobremim.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: .2;
+  left: 0;
+  top: 0;
+}
+.sobre-mim h2{
+  font-size: 42px;
+}
+
+.sobre-mim h2 span{
+  color: #F10086;
+}
+.sobre-mim p{
+  color: white;
   font-weight: 300;
+  line-height: 1.3;
+}
+.sobre-mim p b{
+  color: #F10086;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  
+}
+.sobre-mim p b::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px; /* Distância da linha abaixo do texto */
+  width: 0;
+  height: 2px; /* Espessura da linha */
+  background-color: #F10086; /* Cor da linha */
+  animation: underline 2s infinite ease-in-out;
+}
+@keyframes underline {
+  0%, 100% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+}
+.sobre-mim h3{
+  color: transparent;
+  font-feature-settings: 'liga' off, 'clig' off;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #FFF;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 101px;
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+  word-break: break-all;
+  font-family: arial;
 }
 
 .portfolio {
@@ -136,7 +370,11 @@ span {
 .grid-item {
   box-sizing: border-box;
 }
-
+@media (max-width: 1400px) {
+  .sobre-mim::before{
+    left: -10%;
+  }
+}
 @media (min-width: 320px) {
 
   .grid-sizer,
