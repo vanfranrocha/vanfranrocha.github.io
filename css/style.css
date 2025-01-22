@@ -78,6 +78,8 @@ path {
 }
 .fixed-menu {
   position: fixed;
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s, backdrop-filter 0.3s;
 }
 .menu{
   position: relative;
@@ -104,7 +106,7 @@ path {
   font-size: 22px;
 }
 
-.menu li.active a {
+.menu li a.active {
   color: #F10086;
   font-weight: 600;
 }
@@ -198,6 +200,158 @@ path {
   justify-content: center;
   position: relative;
 }
+
+:root {
+  --color-bg1: 113, 26, 117;
+  --color-bg2: 32, 22, 30;
+  --color1: 77, 18, 255;
+  --color2: 245, 130, 167;
+  --color3: 54, 24, 129;
+  --color4: 78, 28, 80;
+  --color5: 241, 0, 134;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+.gradients-container {
+  filter: url(#goo) blur(40px) ;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  opacity: .2;
+}
+
+.g1 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: center center;
+  animation: moveVertical 30s ease infinite;
+
+  opacity: 1;
+}
+
+.g2 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+
+  opacity: 1;
+}
+
+.g3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+
+  opacity: 1;
+}
+
+.g4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+
+  opacity: 0.7;
+}
+
+.g5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+
+  opacity: 1;
+}
+
+.interactive {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+
+  opacity: 0.7;
+}
+
 .text-about{
   text-align: center;
 }
@@ -271,6 +425,12 @@ path {
   position: relative;
   padding-bottom: 80px;
 }
+.sobre-mim video{
+  position: absolute;
+  right: -40%;
+  bottom: 5%;
+  width: 110%;
+}
 .sobre-mim::before{
   content: '';
   background-image: url('../Images/foto-sobremim.png');
@@ -285,6 +445,7 @@ path {
 }
 .sobre-mim h2{
   font-size: 42px;
+  font-weight: 700;
 }
 
 .sobre-mim h2 span{
@@ -334,6 +495,91 @@ path {
   word-break: break-all;
   font-family: arial;
 }
+
+#carreira{
+  margin-top: 60px;
+}
+#carreira h2{
+  font-size: 42px;
+  font-weight: 700;
+}
+#carreira h3{
+  color: transparent;
+  font-feature-settings: 'liga' off, 'clig' off;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #FFF;
+  font-size: 110px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 101px;
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+  word-break: break-all;
+  font-family: arial;
+}
+.timeline-list {
+  margin-left: 65px;
+}
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  position: relative;
+}
+.timeline-item:not(:last-child)::before {
+  left: -40px;
+}
+.timeline-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 25px);
+  background: hsl(0, 0%, 22%);
+}
+.timeline-item::marker{
+  color: transparent;
+}
+.timeline-item::after {
+  height: 8px;
+  width: 8px;
+  left: -43px;
+}
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #F10086;
+  box-shadow: 0 0 0 4px hsl(0, 0%, 22%);
+}
+.timeline-item-title {
+  color: white;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 0px;
+}
+.timeline-list span {
+  color: #F10086;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.timeline-text {
+  max-width: 700px;
+  color: #afafaf;
+  margin-top: 3px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: justify;
+}
+
 
 .portfolio {
   padding-right: 0 !important;

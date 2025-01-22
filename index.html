@@ -28,19 +28,19 @@
               <a href="/index.html"><img src="Images/logovr-icon2.png" alt="Vanessa Rocha"></a>
             </div>
           </div>
-          <div class="offset-1 col-md-5">
+          <nav class="offset-1 col-md-5">
             <ul class="menu">
-              <li class="active">
-                <a href="index.html">home</a>
+              <li>
+                <a class="active" href="#banner">home</a>
               </li>
               <li>
-                <a href="portfolio.html">sobre mim</a>
+                <a href="#sobre-mim">sobre mim</a>
               </li>
               <li>
-                <a href="portfolio.html">carreira</a>
+                <a href="#carreira">carreira</a>
               </li>
               <li>
-                <a href="portfolio.html">portfólio</a>
+                <a href="#portfolio">portfólio</a>
               </li>
               <li>
                 <a style="color: #F10086;" href="https://www.behance.net/vanfranrocha"><i class="fab fa-behance"></i></a>
@@ -48,14 +48,14 @@
                 <a style="color: #F10086;" href="https://www.instagram.com/vanfranrocha"><i class="fab fa-instagram"></i></a>
               </li>
             </ul>
-          </div>
+          </nav>
           <div class="offset-1 col-md-2 text-right">
-            <a href="/" class="button-primary">
+            <a href="/" class="button-primary" title="Entre em contato">
               <div>Entre em contato</div>
             </a>
           </div>
           <div class="col-md-2">
-            <a href="/" class="button-primary-outline">
+            <a href="./Images/currículo_VanessaRocha.pdf" title="Baixar meu Currículo" download="./Images/currículo_VanessaRocha.pdf" class="button-primary-outline">
               <div>
                 <i class="fa fa-download"></i>
                 Currículo CV
@@ -67,7 +67,15 @@
     </div>
     
     <!-- banner -->
-    <div class="banner">
+    <section id="banner" class="banner">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
       <svg width="1440" height="1996" viewBox="0 0 1440 1996" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.3">
         <path d="M348.963 1121.76C314.915 1105.68 291.557 1090.02 273.226 1071C203.94 996.431 184.767 819.963 224.39 621.428C244.765 522.375 278.588 436.437 322.201 372.911C360.612 317.74 412.812 271.741 486.479 228.151C537.241 198.595 592.624 177.952 660.773 163.186C729.792 148.602 781.256 150.609 827.636 169.695C829.736 170.589 831.826 171.526 834.022 172.563C886.047 197.142 962.041 260.742 1037.3 342.695C1113.8 425.989 1174.81 512.807 1200.51 574.933C1281.16 701.831 1247.48 772.798 1196.51 880.225C1173.9 927.876 1148.27 981.887 1126.65 1051.56C1111.05 1101.85 1097.65 1147.01 1085.83 1186.85C1029.07 1378.17 1003.17 1465.5 907.597 1530.32C884.631 1544.99 858.896 1545.78 831.12 1532.66C809.226 1522.31 785.871 1503.25 761.701 1475.99C739.813 1451.13 717.964 1422.67 694.832 1392.54C664.408 1352.92 632.951 1311.94 597.013 1273.23C554.157 1227.46 503.591 1191.17 442.423 1162.28C433.344 1157.99 423.758 1153.73 413.934 1149.63C409.518 1147.79 405.135 1145.97 400.793 1144.17C382.565 1136.63 365.347 1129.5 348.963 1121.76ZM834.312 171.48C832.105 170.438 830.004 169.493 827.889 168.588C781.335 149.431 729.721 147.412 660.528 162.032C592.293 176.816 536.835 197.489 485.995 227.085C412.214 270.746 359.924 316.829 321.431 372.116C277.73 435.772 243.848 521.857 223.443 621.068C183.734 820.027 203.036 996.97 272.616 1071.85C291.051 1090.98 314.507 1106.71 348.671 1122.85C365.077 1130.6 382.303 1137.73 400.544 1145.28C404.887 1147.08 409.267 1148.89 413.682 1150.73C423.493 1154.83 433.065 1159.08 442.132 1163.36C503.181 1192.2 553.641 1228.42 596.403 1274.07C632.294 1312.74 663.733 1353.69 694.142 1393.3C717.284 1423.45 739.144 1451.92 761.063 1476.81C785.337 1504.19 808.809 1523.34 830.829 1533.75C858.887 1547 884.887 1546.2 908.116 1531.36C954.59 1499.84 985.615 1462.82 1011.86 1407.55C1037.34 1353.88 1058.07 1284.02 1086.76 1187.32C1098.58 1147.48 1111.97 1102.33 1127.57 1052.05C1149.16 982.457 1174.77 928.483 1197.37 880.865C1223.68 825.418 1244.46 781.621 1249.11 734.56C1254.14 683.679 1239.4 634.278 1201.32 574.372C1175.62 512.216 1114.52 425.254 1037.93 341.851C962.569 259.803 886.451 196.113 834.312 171.48Z" fill="#711A75"/>
@@ -112,15 +120,16 @@
         <div class="row">
           <div class="col-md-12 mt-30 text-about">
             <h1>It's me, <b>Vanessa Rocha</b></h1>
-            <p class="typewriter">Designer e Desenvolvedora Front-End</p>
+            <p class="typewriter">UI Designer Sênior e Desenvolvedora Front-End</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <div class="container" style="margin-top: 120px;margin-bottom: 120px;">
       <div class="linha-divisoria"></div>
     </div>
-    <div class="sobre-mim">
+    <!-- sobre mim -->
+    <section id="sobre-mim" class="sobre-mim">
       <div class="container">
         <div class="row align-items-end">
           <div class="offset-2 col-md-6">
@@ -137,10 +146,101 @@
           </div>
           <div class="col-md-4">
             <h3>VANESSA<br/>RO<br/>CHA</h3>
+            <video src="./Images/figurinha_vanessa.mov" autoplay loop muted playsinline></video>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- carreira -->
+    <section id="carreira">
+      <div class="container">
+        <h2 class="text-white">Educação e Carreira</h2>
+        <div class="mt-5">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <h3>Educação</h3>
+            </div>
+            <div class="col-md-8 col-12">
+              <ol class="timeline-list">
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Instituto Tocantinense Presidente Antônio Carlos - ITPAC</h4>
+                    <span>2013 - 2016</span>
+                    <p class="timeline-text">Bacharelado em Sistemas de Informação. Lá, aprendi uma ampla gama de tópicos que são essenciais para entender tanto a teoria quanto os aspectos práticos da computação. Isso envolve fundamentos de programação, arquitetura de computadores, sistemas operacionais, bancos de dados, engenharia de software, resolução de problemas, colaboração e habilidades sociais de comunicação.</p>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">PUC Minas</h4>
+                    <span>2018 - 2019 </span>
+                    <p class="timeline-text">Pós Graduação em Engenharia de Software. No curso aprendi na prática o emprego da Engenharia de Software no processo de desenvolvimento de software para os mais variados ambientes organizacionais, abordando técnicas, tendências e estado da arte da Engenharia de Software, como desenvolvimento de aplicações web front-end e back-end, SCRUM, DevOps, DevSecOps, Design Thinking, Design Sprints, TDD, Generative AI, dentre outras.</p>
+                    <span style="font-size: 11px; color: #868686;">Nota: Incompleto.</span>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Universidade Federal de Goiás</h4>
+                    <span>2018 - 2019</span>
+                    <p class="timeline-text">Mestrado em Engenharia de Software. Fui aluna especial do curso, participando de disciplinas e projetos importantes publicando artigos em congressos nacionais e internacionais.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <h3>Carreira</h3>
+            </div>
+            <div class="col-md-8 col-12">
+              <ol class="timeline-list">
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">UI Designer Sênior and Front-End Developer Pleno</h4>
+                    <span>set/2018 - o momento.</span>
+                    <p class="timeline-text">
+                      Datapage Brasil <br/>
+                      Desenvolvimento de sites, aplicações em Vue, designer UI/UX e desenvolvedora Front End de Aplicativos.
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Designer Social Media</h4>
+                    <span>mai/2016 - ago/2018 · 2 anos 4 meses</span>
+                    <p class="timeline-text">
+                      Agência CCM <br/>
+                      Programadora e Designer (Desenvolvimento de sites em PHP Wordpress, Design de Interfaces(Sketch, Adobe XD), Criação de mídias para redes sociais e desenvolvimento de artes para flyers, foldes, panfletos, cartões de visitas, outdoors e dentre outros (Photoshop, Illustrator)).
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Técnica em informática</h4>
+                    <span>abr/2014 - abr/2016 · 2 anos 1 mês</span>
+                    <p class="timeline-text">
+                      Senai Tocantins<br/>
+                      Configuração de Impressoras, atendimento aos usuários, gerenciamento de servidores, manutenção de computadores, dentre outros.
+                    </p>
+                </li>
+
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Técnica em informática</h4>
+                  <span>jan de 2014 - abr de 2014 · 4 meses</span>
+                  <p class="timeline-text">
+                    Polícia Federal<br/>
+                    Configuração de Impressoras, atendimento aos usuários, gerenciamento de servidores, manutenção de computadores, dentre outros.
+                  </p>
+                </li>
+
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Técnica em informática</h4>
+                  <span>abr de 2013 - set de 2013 · 6 meses</span>
+                  <p class="timeline-text">
+                    Chevrolet<br/>
+                    Configuração de Impressoras, atendimento aos usuários, gerenciamento de servidores, manutenção de computadores, dentre outros.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
