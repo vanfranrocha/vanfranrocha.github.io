@@ -5,6 +5,7 @@
 <meta name="description" content="Olá, sou a Vanessa Rocha">
 <meta name="URL" content="https://vanfranrocha.github.io">
 <meta property="og:url" content="https://vanfranrocha.github.io">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="Vanessa França Rocha, Vanessa Rocha, design, designer, goiânia, goias, araguaina, tocantins, marketing, desenvolvimento de sites">
 <link rel="shortcut icon" href="Images/logovr-icon.png" type="image/x-icon">
 <link rel="icon" href="Images/logovr-icon.png" type="image/x-icon">
@@ -23,12 +24,12 @@
     <div class="header fixed-menu">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-1">
+          <div class="col-md-1 col-1">
             <div class="logoimg">
               <a href="/index.html"><img src="Images/logovr-icon2.png" alt="Vanessa Rocha"></a>
             </div>
           </div>
-          <nav class="offset-1 col-md-5">
+          <nav class="offset-md-1 col-md-5 col-3">
             <ul class="menu">
               <li>
                 <a class="active" href="#banner">home</a>
@@ -49,12 +50,12 @@
               </li>
             </ul>
           </nav>
-          <div class="offset-1 col-md-2 text-right">
+          <div class="offset-md-1 col-md-2 col-4 text-right">
             <a href="/" class="button-primary" title="Entre em contato">
               <div>Entre em contato</div>
             </a>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 col-4">
             <a href="Images/currículo_VanessaRocha.pdf" title="Baixar meu Currículo" download="./Images/currículo_VanessaRocha.pdf" class="button-primary-outline">
               <div>
                 <i class="fa fa-download"></i>
@@ -125,14 +126,14 @@
         </div>
       </div>
     </section>
-    <div class="container" style="margin-top: 120px;margin-bottom: 120px;">
+    <div class="container my-120">
       <div class="linha-divisoria"></div>
     </div>
     <!-- sobre mim -->
     <section id="sobre-mim" class="sobre-mim">
       <div class="container">
         <div class="row align-items-end">
-          <div class="offset-2 col-md-6">
+          <div class="offset-lg-2 col-md-6 col-12">
             <div class="mt-5">
               <h2 class="text-white">Quem é <span>Vanessa</span><br/> Rocha?</h2>
               <p class="">
@@ -144,7 +145,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-12">
             <h3>VANESSA<br/>RO<br/>CHA</h3>
             <video src="./Images/figurinha_vanessa.mov" autoplay loop muted playsinline></video>
           </div>
@@ -240,9 +241,9 @@
           </div>
         </div>
         <div class="mt-5">
-          <h5>Minhas Skills</h5>
+          <h5>Minhas Skills e ferramentas</h5>
           <div class="row align-items-center">
-            <div class="col-md-6 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-12">
               <div class="skills-code">
                 <div class="hero-text">
                   <h6><span class="var">var</span> <span class="var-name">name</span> = <span class="var-value">"Vanessa Rocha"</span>;</h6>
@@ -252,6 +253,40 @@
                     <span class="wrap"></span></a>) {<br>&nbsp; &nbsp; &nbsp;<span class="var">return</span>
                     <a href="#sobre-mim" class="typewrite not-active" data-period="20000" data-type='[ "true", "almostTrue", "sheIsTrying" ]'>
                     <span class="wrap"></span></a>;<br>}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12">
+              <div class="flex-cards">
+                <div class="card-icon">
+                  <img src="Images/icon-vue.png" alt="Vue">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-javascript.png" alt="Javascript">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-typescript.png" alt="TypeScript">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-quasar.png" alt="Quasar">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-html.svg" alt="Html">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-bootstrap.png" alt="Bootstrap">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-sass.png" alt="Sass">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-figma.svg" alt="Figma">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-photoshop.png" alt="Photoshop">
+                </div>
+                <div class="card-icon">
+                  <img src="Images/icon-illustrator.png" alt="Illustrator">
                 </div>
               </div>
             </div>
@@ -334,6 +369,70 @@
                   </div>
                 </div>
               </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio -->
+    <section id="portfolio" class="pb-5 mt-5 pt-5">
+      <div class="container">
+        <h2 class="text-white">Portfólio</h2>
+        <div class="mt-5">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://www.behance.net/gallery/121501183/Compare-e-Compre-App-Design" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/app-comparecompre.png" alt="Aplicativo Compare e Compre" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Compare e Compre</h3>
+                <p class="projeto-categoria">Aplicativo</p>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://www.behance.net/gallery/100794849/Curtamais-Site-e-app" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/site-curtamais.png" alt="Site Curta Mais" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Curta Mais</h3>
+                <p class="projeto-categoria">Site</p>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://www.behance.net/gallery/118128873/postoapp-Logo" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/logo-posto.png" alt="Logo Posto.app" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Posto.app</h3>
+                <p class="projeto-categoria">Logomarca</p>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://intvisa.com.br/" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/intvisasite.jpg" alt="Site Intvisa" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Intvisa</h3>
+                <p class="projeto-categoria">Site</p>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://ope.com.br/" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/opeconstrucoes-site.jpg" alt="Site Ope Construções" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Ope Construções</h3>
+                <p class="projeto-categoria">Site</p>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <a href="https://ope.com.br/" class="card-projeto">
+                <div class="projeto-imagem">
+                  <img src="Images/opeconstrucoes-site.jpg" alt="Site Ope Construções" loading="lazy">
+                </div>
+                <h3 class="projeto-titulo">Ope Construções</h3>
+                <p class="projeto-categoria">Site</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>

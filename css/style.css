@@ -665,6 +665,30 @@ path {
 .skills-code .hero-text h6{
   font-size: 24px;
 }
+.card-icon{
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px;
+  height: 80px;
+  width: 80px;
+  border-radius: 12px;
+  background: rgb(37, 26, 32);
+  transition: .2s all;
+}
+.card-icon:hover{
+  transform: scale(1.2);
+  background: rgb(27, 20, 24);
+  border: 1px solid transparent;
+}
+.flex-cards{
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+}
+.card-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .var {
   color: #F77669;
 }
@@ -675,75 +699,70 @@ path {
   color: #FCB350;
 }
 
-.honeycomb {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  zoom: 80%;
+#portfolio  h2{
+  font-size: 42px;
+  font-weight: 700;
 }
-.honeycomb-row:first-child, .honeycomb-row:last-child{
-  gap: 25px;
+#portfolio .card-projeto{
+  display: block;
+  animation: scaleUp .25s ease forwards;
+  text-decoration: none;
 }
-.honeycomb-item {
+#portfolio .card-projeto:hover{
+  transform: none;
+  text-decoration: none;
+}
+#portfolio .card-projeto:hover img{
+  transform: scale(1.1);
+}
+#portfolio .card-projeto .projeto-imagem{
+  border-radius: 16px;
+  height: auto;
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  clip-path: polygon(
-      50% 0%,
-      100% 25%,
-      100% 75%,
-      50% 100%,
-      0% 75%,
-      0% 25%
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+#portfolio .card-projeto .projeto-imagem::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  transition: .25s ease;
+}
+#portfolio .card-projeto .projeto-imagem img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: .25s ease;
+}
+
+#portfolio .card-projeto .projeto-titulo {
+  color: #fff;
   font-size: 16px;
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.3;
 }
-.honeycomb-item img{
-  object-fit: contain;
-  width: 50px;
-  height: 50px;
-}
-.size-1 {
-  width: 120px;
-  height: 140px;
+#portfolio .card-projeto .projeto-categoria {
+  color: #cdcdcd;
+  font-size: 13px;
+  font-weight: 300;
 }
 
-.size-2 {
-  width: 115px;
-  height: 130px;
-  margin-left: 10px;
-  margin-right: 5px;
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.5);
+  }
+  100% {
+      transform: scale(1);
+  }
 }
-.size-3 {
-  width: 95px;
-  height: 105px;
-}
-.honeycomb-row {
-  display: flex;
-  justify-content: center;
-  margin-top: -27px;
-}
-
-.honeycomb-row:nth-child(odd) .honeycomb-item {
-  margin-left: 10px;
-}
-
-.honeycomb-item:hover {
-  background-color: #F10086;
-  transform: scale(1.2);
-  z-index: 10;
-}
-.portfolio {
-  padding-right: 0 !important;
-}
-
 /* ---- .grid-item ---- */
 .grid-item {
   float: left;
@@ -807,5 +826,30 @@ path {
   .grid-sizer,
   .grid-item {
     width: 50%;
+  }
+}
+.my-120{
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+@media (max-width: 768px){
+  .site-app{
+    overflow-x:  hidden;
+  }
+  .banner{
+    height: 400px;
+  }
+  .my-120{
+    margin-top: 120px;
+    margin-bottom: 40px;
+  }
+  .text-about h1{
+    font-size: 32px;
+  }
+  .text-about p{
+    font-size: 16px;
+  }
+  .sobre-mim h2, #carreira h2, #portfolio h2{
+    font-size: 34px;
   }
 }
