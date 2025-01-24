@@ -1,16 +1,3 @@
-$(document).ready(function(){
-	var $grid = $('.grid').masonry({
-		// set itemSelector so .grid-sizer is not used in layout
-		itemSelector: '.grid-item',
-		// use element for option
-		columnWidth: '.grid-sizer'
-	});
-	// layout Masonry after each image loads
-	$grid.imagesLoaded().progress( function() {
-		$grid.masonry();
-	});
-});
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 	anchor.addEventListener('click', function(e) {
 		e.preventDefault();
@@ -42,6 +29,35 @@ window.addEventListener('scroll', () => {
 		}
 	});
 })
+
+var iconMenu = document.querySelector('.menu-burguer');
+
+iconMenu.addEventListener('click', function() {
+  toggleMenu();
+}, false);
+
+var isOpen = false;
+
+function toggleMenu(e) {
+  isOpen = !isOpen;
+  var myMenu = document.querySelector('.menu-wrapper');
+  var overlay = document.querySelector('.overlay');
+ 
+  myMenu.classList.toggle('active'); 
+  overlay.classList.toggle('active');
+  if (iconMenu.classList.contains('open')) {
+    iconMenu.classList.remove('open');
+  } else {
+    iconMenu.classList.add('open');
+  }
+}
+
+document.onkeydown = function(e) {
+  if (e.keyCode == 27) {
+    isOpen && 
+    toggleMenu();
+  }
+}
 
 var TxtType = function(el, toRotate, period) {
 	this.toRotate = toRotate;
@@ -100,31 +116,51 @@ window.onload = function() {
 	document.body.appendChild(css);
 };
 
+const select = document.querySelector('[data-select]');
+const selectItems = document.querySelectorAll('[data-select-item]');
+const filterBtn = document.querySelectorAll('[data-filter-btn]');
+const filterItems = document.querySelectorAll('[data-filter-item]');
+const selectValue = document.querySelector('[data-select-value]');
 
-const honeycomb = document.getElementById('honeycomb');
-const items = honeycomb.querySelectorAll('.honeycomb-item');
+select.addEventListener('click', function () {elementToggleFunc(this); });
 
-honeycomb.addEventListener('mousemove', (e) => {
-	const rect = honeycomb.getBoundingClientRect();
-	const mouseX = e.clientX - rect.left;
-	const mouseY = e.clientY - rect.top;
+for(let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener('click', function() {
 
-	items.forEach(item => {
-		const itemRect = item.getBoundingClientRect();
-		const itemX = itemRect.left + itemRect.width / 2 - rect.left;
-		const itemY = itemRect.top + itemRect.height / 2 - rect.top;
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        elementToggleFunc(select);
+        filterFunc(selectedValue);
 
-		const distance = Math.sqrt(
-			Math.pow(mouseX - itemX, 2) + Math.pow(mouseY - itemY, 2)
-		);
+    });
+}
 
-		const scale = Math.max(1, 2 - distance / 100);
-		item.style.transform = `scale(${scale})`;
-	});
-});
 
-honeycomb.addEventListener('mouseleave', () => {
-	items.forEach(item => {
-		item.style.transform = 'scale(1)';
-	});
-});
+const filterFunc = function (selectedValue) {
+    for(let i = 0; i < filterItems.length; i++) {
+        if(selectedValue == "todos") {
+            filterItems[i].classList.add('active');
+        } else if (selectedValue == filterItems[i].dataset.category) {
+            filterItems[i].classList.add('active');
+        } else {
+            filterItems[i].classList.remove('active');
+        }
+    }
+}
+
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+    
+    filterBtn[i].addEventListener('click', function() {
+
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        filterFunc(selectedValue);
+
+        lastClickedBtn.classList.remove('active');
+        this.classList.add('active');
+        lastClickedBtn = this;
+
+    })
+}
