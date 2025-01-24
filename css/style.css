@@ -45,14 +45,6 @@ path {
   }
 }
 
-@keyframes movePath {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(50px, 50px);
-  }
-}
 .siteheader {
   position: relative;
 }
@@ -1020,6 +1012,9 @@ path {
   }
   .menu-nav-desk, .menu-botao-desk{
     display: none;
+  }
+  .skills-code .hero-text h6{
+    font-size: 18px;
   }
   #contato video{
     /* top: 50%; */
