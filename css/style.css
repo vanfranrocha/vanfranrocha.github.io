@@ -823,13 +823,11 @@ path {
   transform: scale(1.1);
 }
 #portfolio .card-projeto .projeto-imagem{
-  border-radius: 16px;
   height: auto;
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 360px;
   overflow: hidden;
-  margin-bottom: 15px;
 }
 #portfolio .card-projeto .projeto-imagem::before{
   content: '';
@@ -861,7 +859,7 @@ path {
   color: #cdcdcd;
   font-size: 13px;
   font-weight: 300;
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 @keyframes scaleUp {
@@ -872,8 +870,21 @@ path {
       transform: scale(1);
   }
 }
+.project-list{
+  margin: 0;
+  width: 100%;
+}
 .project-item{
   display: none;
+  padding: 0;
+  position: relative;
+}
+.conteudo-projeto{
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  padding: 16px;
+  bottom: 0;
 }
 .project-item.active{
     display: block;
